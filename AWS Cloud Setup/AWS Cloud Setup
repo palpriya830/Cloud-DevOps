@@ -1,0 +1,68 @@
+AWS EC2 Infrastructure Setup and Deployment
+
+Step-by-Step Implementation
+
+step 1: Logged into the AWS account.
+    Selected the Sydney region (ap-southeast-2).
+    Configured AWS CLI authentication using aws login.
+    Verified AWS account credentials.
+    Command used: aws sts get-caller-identity
+
+Step 2: EC2 Instance Launch
+    Navigated to the EC2 service in the AWS Management Console.
+    Launched an EC2 virtual machine.
+    Selected Ubuntu as the operating system.
+    Selected the t3.micro instance type.
+    Configured the required key pair for SSH authentication.
+    Configured the network and security group.
+    Successfully launched the instance.
+
+The instance state was verified as Running, with all three status checks passing.
+
+Step 3: Security Group Configuration
+    Configured inbound security group rules to allow HTTP and SSH traffic.
+    Type    Protocol    Port          Source                Purpose
+    HTTP     TCP         80          0.0.0.0/0             Public web access
+    SSH      TCP         22      My-IP (1.38.148.197/32)   Secure terminal access
+    The SSH rule was updated to allow connections from the current public IP address.
+
+Step 4: SSH Connection to EC2
+    Established a remote SSH connection from the local Ubuntu terminal (WSL) to the EC2 instance.
+    First, configured the private key permissions: chmod 400 ~/.ssh/"EC2 Instance Key.pem"
+    Connected to the EC2 instance using: ssh -i ~/.ssh/"EC2 Instance Key.pem" ubuntu@32.236.18.60
+    Successfully established SSH connectivity and accessed the Ubuntu server terminal.
+    The connection was also verified using: nc -zv 32.236.18.60 22
+
+Step 5: Nginx Web Server Configuration
+Configured the Nginx web server on the Ubuntu EC2 instance.
+    sudo apt update
+    sudo apt install nginx
+    sudo systemctl start nginx
+    sudo systemctl enable nginx
+    sudo systemctl status nginx
+    Verified web server accessibility using the instance's public IPv4 address:
+    http://32.236.18.60
+    The Nginx welcome page was successfully accessible through a web browser, confirming that HTTP traffic was reaching the instance.
+
+Step 6: AMI Creation and Backup
+    Created an Amazon Machine Image (AMI) from the running EC2 instance using the AWS Management Console.
+    Procedure:
+    Navigated to EC2 → Instances.
+    Selected the target EC2 instance.
+    Opened Actions → Image and templates.
+    Selected Create image.
+    Provided the AMI name: Snapbox-AMI-Backup.
+    Submitted the image creation request.
+    Verified the AMI under EC2 → Images → AMIs.
+    AMI creation confirmation and AMI status showing Available.
+
+
+
+
+
+
+
+
+
+
+

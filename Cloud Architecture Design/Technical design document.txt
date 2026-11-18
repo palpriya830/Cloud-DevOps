@@ -1,0 +1,82 @@
+1. Introduction
+
+This document explains a suggested AWS setup for an e-commerce website. Customers can create an account, browse products, add items to a cart, place orders and view their order history.
+
+The design uses three main layers: web, application and database. It is planned across two Availability Zones to reduce the chance that one location problem will make the whole website unavailable.
+
+This is a design exercise only. The AWS resources described here have not been created or deployed.
+
+2. Application Requirements
+
+For this project, I have assumed around 50,000 monthly users and up to 500 users at busy times. The application will run in the Sydney AWS Region (ap-southeast-2) across two Availability Zones.
+
+The main services are EC2 with Auto Scaling, an Application Load Balancer, Amazon RDS for MySQL, Amazon S3, CloudFront, AWS WAF, AWS Shield Standard and IAM roles.
+
+3. Three-Tier Architecture
+
+Web tier: This is the part customers see in their browser. Product images and website files such as CSS and JavaScript will be stored in S3 and delivered through CloudFront. Requests that need processing will go to the load balancer.
+
+Application tier: This part handles tasks such as login, cart updates and order processing. It will run on EC2 servers in private subnets.
+
+Database tier: This part stores customer details, product information and orders. We will use Amazon RDS for MySQL.
+
+4. VPC and Subnet Design
+
+A VPC is a private network inside AWS. It gives our servers and database a network in which they can communicate. Our VPC address range will be 10.0.0.0/16. The /16 means there are 65,536 total IPv4 addresses in this range.
+
+A subnet is a smaller network inside the VPC. I have planned six subnets across two Availability Zones:
+
+5. Internet Access and Routing
+
+An Internet Gateway connects the VPC to the internet. The public subnets use a route table that sends internet traffic (0.0.0.0/0) to the Internet Gateway. A route table is like a map: it tells network traffic where it should go.
+
+A NAT Gateway allows servers in private application subnets to make outbound connections, for example to download software updates. It does not allow new direct connections from the internet to those private servers.
+
+The design uses one NAT Gateway in each Availability Zone for better availability. This costs more than using one NAT Gateway. The database subnets will not have a default route to the internet.
+
+6. Load Balancer and EC2 Auto Scaling
+
+The Application Load Balancer (ALB) will be placed in the public subnets across both Availability Zones. It receives customer HTTPS requests and sends them to healthy application servers. Health checks help it avoid sending traffic to a server that is not working properly.
+
+The application will run on EC2 virtual servers in private subnets. An Auto Scaling group will manage the number of servers. For the cost estimate, I have assumed a minimum of 2, a desired number of 2 and a maximum of 6 servers. It can add servers when traffic increases and reduce them when traffic falls.
+
+7. Database and Static Files
+
+Amazon RDS is a managed database service. We will use MySQL to store customer, product and order information. A Multi-AZ setup keeps a standby database in another Availability Zone. If the main database has a problem, AWS can switch to the standby. The database will be in private subnets.
+
+Amazon S3 will store product pictures and website files. CloudFront will deliver these files from locations closer to customers and cache them. The S3 bucket will stay private. CloudFront will get permission to read the files through Origin Access Control.
+
+8. Security
+
+AWS WAF acts as a web firewall. It can filter unwanted requests and help protect the website from common web attacks. AWS Shield Standard provides basic protection against common DDoS attacks for supported AWS services.
+
+Security Groups act like firewalls for AWS resources. The ALB security group will allow HTTPS traffic. The application security group will accept traffic only from the ALB. The database security group will allow MySQL traffic on port 3306 only from the application security group.
+
+EC2 servers will use IAM roles so they can access only the AWS services they need. We should not save long-term access keys on the servers. HTTPS and encryption will be used to protect data. CloudWatch will be used for monitoring, and CloudTrail will record account activity.
+
+9. High Availability and Scaling
+
+The ALB and application servers are spread across two Availability Zones. If one zone has a problem, the other zone can continue serving requests if it has enough capacity. Auto Scaling can replace unhealthy EC2 servers and add more servers when traffic increases. RDS Multi-AZ provides a standby database for failover.
+
+This design reduces the risk of an outage caused by one Availability Zone. It does not protect against every issue, such as application bugs, data problems or a full AWS Region outage.
+
+10. Monthly Cost Estimate
+
+The monthly cost will be estimated using the AWS Pricing Calculator for the Sydney Region. The following values are inputs for the estimate, not confirmed AWS prices:
+
+11. Cost Control
+
+Auto Scaling can help avoid running extra EC2 servers when they are not needed. EC2 and RDS sizes should be reviewed based on actual usage. CloudFront caching can reduce repeated requests to S3. S3 lifecycle rules can move older files to lower-cost storage when suitable.
+
+AWS Budgets and billing alerts should be enabled. One NAT Gateway can reduce the cost of a test environment, but it is less resilient than using one in each Availability Zone.
+
+12. Design Decisions and Trade-offs
+
+Two Availability Zones improve availability but cost more than a single-zone setup. RDS Multi-AZ helps with database failover but the standby adds cost. Two NAT Gateways improve availability but cost more than one. S3 and CloudFront make it easier to deliver static files and reduce work for the application servers.
+
+Before using this design for a real business, the application should be load-tested, server sizes should be checked, and backup and recovery plans should be tested.
+
+13. Conclusion
+
+This design separates the website, application logic and database. It uses a load balancer to share requests, Auto Scaling to adjust the number of application servers, RDS Multi-AZ for database availability, and S3 with CloudFront for static files. Security Groups, IAM roles, WAF, Shield and encryption help protect the system.
+

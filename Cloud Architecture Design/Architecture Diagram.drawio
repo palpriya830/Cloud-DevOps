@@ -1,0 +1,93 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="WNfSdfl2zhZ20SbmMSqv">
+    <mxGraphModel dx="1030" dy="561" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="WpQW3daPf3J3swr-46Bv-28" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="480" width="760" x="34" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-1" parent="WpQW3daPf3J3swr-46Bv-28" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Customer" vertex="1">
+          <mxGeometry height="50" width="110" x="50" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-2" parent="WpQW3daPf3J3swr-46Bv-28" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="AWS" vertex="1">
+          <mxGeometry height="50" width="110" x="230" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-3" parent="WpQW3daPf3J3swr-46Bv-28" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Amazon s3&lt;div&gt;Private&amp;nbsp; Static Origin&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="110" x="650" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-4" parent="WpQW3daPf3J3swr-46Bv-28" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="CloudFront&lt;div&gt;CDN / edge cache&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="110" x="430" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-5" edge="1" parent="WpQW3daPf3J3swr-46Bv-28" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint y="170" as="sourcePoint" />
+            <mxPoint x="760" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-25" connectable="0" parent="WpQW3daPf3J3swr-46Bv-5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=1;defaultLabelBackgroundColor=page;labelPadding=0 4;" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;Availability Zone 1&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.5868" y="-3" as="geometry">
+            <mxPoint x="28" y="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-7" edge="1" parent="WpQW3daPf3J3swr-46Bv-28" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint y="480" as="sourcePoint" />
+            <mxPoint x="760" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-8" edge="1" parent="WpQW3daPf3J3swr-46Bv-28" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint y="479" as="sourcePoint" />
+            <mxPoint y="169" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-9" edge="1" parent="WpQW3daPf3J3swr-46Bv-28" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="760" y="480" as="sourcePoint" />
+            <mxPoint x="760" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-10" parent="WpQW3daPf3J3swr-46Bv-28" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="" vertex="1">
+          <mxGeometry height="270" width="290" x="60" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-11" parent="WpQW3daPf3J3swr-46Bv-28" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="" vertex="1">
+          <mxGeometry height="270" width="290" x="450" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-14" parent="WpQW3daPf3J3swr-46Bv-28" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="&lt;b&gt;Private Subnet&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;AZ 1&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;NAT Gateway&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="110" x="80" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-15" parent="WpQW3daPf3J3swr-46Bv-28" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="&lt;b&gt;Private app Subnet AZ 1&lt;/b&gt;&lt;div&gt;&lt;b&gt;EC2 AutoScaling&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="110" x="210" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-16" parent="WpQW3daPf3J3swr-46Bv-28" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="&lt;b&gt;Private Subnet&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;AZ 2&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;NAT Gateway&lt;/b&gt;&lt;b&gt;&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="110" x="470" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-17" parent="WpQW3daPf3J3swr-46Bv-28" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="&lt;b&gt;Private app Subnet AZ 2&lt;/b&gt;&lt;div&gt;&lt;b&gt;EC2 AutoScaling&lt;/b&gt;&lt;b&gt;&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="110" x="610" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-18" parent="WpQW3daPf3J3swr-46Bv-28" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="&lt;b&gt;Private DB&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;Subnet AZ 2&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="110" x="540" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-21" parent="WpQW3daPf3J3swr-46Bv-28" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="&lt;b&gt;Private DB&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;Subnet AZ 1&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="110" x="130" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-22" parent="WpQW3daPf3J3swr-46Bv-28" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;RDS MYSql Multi AZ&lt;/font&gt;&lt;/b&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;encrypted&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="150" x="329" y="379" as="geometry" />
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-23" parent="WpQW3daPf3J3swr-46Bv-28" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;&lt;font style=&quot;font-size: 19px;&quot;&gt;AWS Three-Tier E-commerce Architecture&lt;/font&gt;&lt;/b&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="485" x="165" as="geometry" />
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-24" parent="WpQW3daPf3J3swr-46Bv-28" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;VPC 10.0.0.0/16&lt;/font&gt;&lt;/b&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="5" y="182" as="geometry" />
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-26" parent="WpQW3daPf3J3swr-46Bv-28" style="text;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;b&gt;Availability Zone&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;b style=&quot;color: light-dark(rgb(0, 0, 0), rgb(237, 237, 237)); font-size: 13px; text-align: center; white-space: nowrap; background-color: transparent;&quot;&gt;2&lt;/b&gt;&lt;div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="140" x="530" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="WpQW3daPf3J3swr-46Bv-27" parent="WpQW3daPf3J3swr-46Bv-28" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;Application Load Balancer&lt;/font&gt;&lt;/b&gt;&lt;div&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;HTTPS 443&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="270" x="272.5" y="290" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

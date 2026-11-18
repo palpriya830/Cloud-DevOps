@@ -1,0 +1,87 @@
+Documentation of all steps taken
+TASK 2: STATIC WEBSITE HOSTING USING AWS S3
+
+1. Objective
+    The objective of this task was to deploy a static website using Amazon S3 (Simple Storage Service).
+    The implementation involved creating an S3 bucket, uploading website files, enabling static website hosting, configuring public access permissions, and setting up a bucket policy to allow visitors to access the website.
+    The final objective was to make the website accessible through the S3 static website endpoint.
+
+2. Implementation Steps
+
+Step 1: Create an S3 Bucket
+    Logged in to the AWS Management Console.
+    Searched for Amazon S3.
+    Opened the S3 service.
+    Selected Create Bucket.
+    Created a new general-purpose bucket with a globally unique name.
+    Selected the AWS region ap-southeast-2.
+    Kept the default object ownership and encryption settings.
+    Bucket Name : static-website-priya
+
+Step 2: Configure Block Public Access
+    By default, Amazon S3 blocks public access to buckets and objects.
+    Since this project requires public website hosting, the bucket-level Block Public Access settings were modified.
+    Steps performed:
+        Opened the created S3 bucket.
+        Navigated to the Permissions tab.
+        Located Block public access (bucket settings).
+        Selected Edit.
+        Unchecked Block all public access.
+    Reviewed and confirmed the changes.
+
+Step 3: Enable Static Website Hosting
+    Opened the S3 bucket.
+    Navigated to the Properties tab.
+    Located the Static website hosting section.
+    Selected Edit.
+    Enabled static website hosting.
+    Selected Host a static website.
+    Configured the following documents:
+    Configuration              Value
+    Index document           index.html
+    Error document           error.html
+Result: Static website hosting was enabled successfully.
+
+Step 4: Upload Website Files
+    The CloudNova website files were uploaded to the S3 bucket.
+    Steps performed:
+        Opened the Objects tab.
+        Selected Upload.
+        Selected Add files.
+        Added the HTML, CSS, JavaScript, error page, and README files.
+        Selected Upload.
+        Verified that the upload completed successfully.
+        All website files were uploaded directly to the root of the S3 bucket.
+    Result: All five project files were uploaded successfully.
+
+Step 5: Configure the S3 Bucket Policy
+    To make the website publicly accessible, a bucket policy was configured to allow public read access to the objects.
+    Steps performed:
+        Navigated to the Permissions tab.
+        Located Bucket policy.
+        Selected Edit.
+        Added the following JSON policy, replacing the bucket name with the actual bucket name.
+        Bucket Policy:
+        {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::YOUR-BUCKET-NAME/*"
+            }
+        ]
+        }
+        Saved the bucket policy.
+        Verified that the policy was displayed successfully.
+
+Step 6: Retrieve the Website Endpoint
+    After enabling static website hosting:
+    Navigated to the Properties tab.
+    Scrolled to Static website hosting.
+    Located the Bucket website endpoint.
+    Copied the endpoint URL for browser verification.
+    Website Endpoint:
+        http://static-website-priya.s3-website-ap-southeast-2.amazonaws.com
